@@ -1,0 +1,2 @@
+sed -i 's/Prediction Reliability:/Prediction Reliability:/g' src/components/student/StudentDashboard.tsx
+sed -i '/Prediction Reliability:/a \                  <\/div>\n                  <div className="mt-2 text-[10px] text-slate-500 max-w-xs mx-auto">\n                    Prediction uses current bus location, speed, route distance, and historical travel patterns.\n' src/components/student/StudentDashboard.tsx

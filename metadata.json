@@ -1,0 +1,7 @@
+{
+  "name": "Elite Bus Prediction",
+  "description": "AI-based smart bus tracking and ETA prediction system for educational institutions with role-based dashboards, privacy-first architecture, and real-time fleet analytics.",
+  "requestFramePermissions": ["geolocation"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+

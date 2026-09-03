@@ -1,0 +1,13 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-9.1.1, pluggy-1.6.0
+rootdir: /app/applet
+plugins: anyio-4.14.2, asyncio-1.4.0
+asyncio: mode=strict, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
+collected 73 items
+
+backend/app/tests/test_agent10_gps.py .......                            [  9%]
+backend/app/tests/test_agent12_eta.py ..                                 [ 12%]
+backend/app/tests/test_agent8_regression.py .........                    [ 24%]
+backend/app/tests/test_agent9_assignments.py ...............             [ 45%]
+backend/app/tests/test_api.py .............                              [ 63%]
+backend/app/tests/test_buses_routes.py 

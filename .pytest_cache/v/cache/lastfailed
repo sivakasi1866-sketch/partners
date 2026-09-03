@@ -1,0 +1,4 @@
+{
+  "backend/app/tests/test_api.py::test_13_eta_ml_integration": true,
+  "backend/app/tests/test_api.py::test_17_wrong_bus_rejection": true
+}

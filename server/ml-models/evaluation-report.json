@@ -1,0 +1,262 @@
+{
+  "timestamp": "2026-09-01T07:11:31.635Z",
+  "dataset": {
+    "totalSamples": 5270,
+    "totalTrips": 255,
+    "routesRepresented": [
+      "R-01 (North Hostel to Science & Tech Quad)",
+      "R-02 (Metro Link & Faculty Express)",
+      "R-03 (South Campus & Research Park Loop)"
+    ],
+    "dateRangeStart": "2026-08-01T06:30:00.000Z",
+    "dateRangeEnd": "2026-08-14T21:30:00.000Z",
+    "datasetType": "SYNTHETIC_DEVELOPMENT_TELEMETRY",
+    "version": "1.0.0-dev"
+  },
+  "cleaningReport": {
+    "totalInputRecords": 5270,
+    "validRecordsRetained": 5270,
+    "recordsRemovedCount": 0,
+    "removalReasons": {
+      "Invalid Target Travel Time (<= 0 min)": 0,
+      "Negative or Zero Distance": 0,
+      "Unrealistic Vehicle Speed (> 80 km/h or < 0)": 0,
+      "Corrupt/Missing GPS Coordinates": 0,
+      "Outlier Travel Duration (> 120 min for campus)": 0
+    }
+  },
+  "splitStrategy": "TRIP_GROUPED_CHRONOLOGICAL_SPLIT",
+  "split": {
+    "train": {
+      "tripCount": 178,
+      "sampleCount": 3670,
+      "routes": [
+        "R-01",
+        "R-02",
+        "R-03"
+      ],
+      "dateRange": {
+        "start": "2026-08-01T07:06:06.573Z",
+        "end": "2026-08-10T15:41:24.194Z"
+      }
+    },
+    "val": {
+      "tripCount": 38,
+      "sampleCount": 776,
+      "routes": [
+        "R-01",
+        "R-02",
+        "R-03"
+      ],
+      "dateRange": {
+        "start": "2026-08-10T15:57:06.414Z",
+        "end": "2026-08-12T20:33:05.782Z"
+      }
+    },
+    "test": {
+      "tripCount": 39,
+      "sampleCount": 824,
+      "routes": [
+        "R-01",
+        "R-02",
+        "R-03"
+      ],
+      "dateRange": {
+        "start": "2026-08-12T20:25:08.928Z",
+        "end": "2026-08-14T20:50:55.085Z"
+      }
+    },
+    "trainCount": 3670,
+    "valCount": 776,
+    "testCount": 824
+  },
+  "allEvaluatedModels": [
+    {
+      "modelName": "Kinematic Distance/Speed Baseline",
+      "modelType": "baseline",
+      "mae": 0.4989,
+      "rmse": 0.785,
+      "r2": 0.9473,
+      "medianAbsoluteError": 0.2924,
+      "accuracyWithin1Min": 86.77,
+      "accuracyWithin3Min": 99.15,
+      "accuracyWithin5Min": 99.76,
+      "trainingTimeMs": 0,
+      "inferenceTimeUs": 0.8,
+      "hyperparameters": {
+        "method": "Kinematic (d/v)*60"
+      }
+    },
+    {
+      "modelName": "Multivariate Ridge Regression (L2)",
+      "modelType": "linear_ridge",
+      "mae": 0.5095,
+      "rmse": 0.7304,
+      "r2": 0.9544,
+      "medianAbsoluteError": 0.3817,
+      "accuracyWithin1Min": 89.56,
+      "accuracyWithin3Min": 99.27,
+      "accuracyWithin5Min": 100,
+      "trainingTimeMs": 315,
+      "inferenceTimeUs": 1.2,
+      "hyperparameters": {
+        "lambda": 0.1,
+        "epochs": 350,
+        "lr": 0.015
+      }
+    },
+    {
+      "modelName": "Single Decision Tree Regressor",
+      "modelType": "decision_tree",
+      "mae": 0.4237,
+      "rmse": 0.7136,
+      "r2": 0.9565,
+      "medianAbsoluteError": 0.2104,
+      "accuracyWithin1Min": 87.62,
+      "accuracyWithin3Min": 99.76,
+      "accuracyWithin5Min": 100,
+      "trainingTimeMs": 398,
+      "inferenceTimeUs": 2.1,
+      "hyperparameters": {
+        "maxDepth": 8,
+        "minSamplesSplit": 6
+      }
+    },
+    {
+      "modelName": "Random Forest Regressor (24 Trees)",
+      "modelType": "random_forest",
+      "mae": 0.2764,
+      "rmse": 0.4422,
+      "r2": 0.9833,
+      "medianAbsoluteError": 0.1557,
+      "accuracyWithin1Min": 95.27,
+      "accuracyWithin3Min": 100,
+      "accuracyWithin5Min": 100,
+      "trainingTimeMs": 5579,
+      "inferenceTimeUs": 14.5,
+      "hyperparameters": {
+        "numTrees": 24,
+        "maxDepth": 8,
+        "maxFeaturesRatio": 0.65
+      }
+    },
+    {
+      "modelName": "Gradient Boosted Decision Trees (GBDT-35)",
+      "modelType": "gradient_boosted_trees",
+      "mae": 0.3176,
+      "rmse": 0.4747,
+      "r2": 0.9807,
+      "medianAbsoluteError": 0.2368,
+      "accuracyWithin1Min": 95.75,
+      "accuracyWithin3Min": 100,
+      "accuracyWithin5Min": 100,
+      "trainingTimeMs": 6026,
+      "inferenceTimeUs": 18.2,
+      "hyperparameters": {
+        "numEstimators": 35,
+        "learningRate": 0.08,
+        "maxDepth": 5
+      }
+    }
+  ],
+  "selectedWinner": {
+    "modelName": "Random Forest Regressor (24 Trees)",
+    "modelType": "random_forest",
+    "mae": 0.2764,
+    "rmse": 0.4422,
+    "r2": 0.9833,
+    "medianAbsoluteError": 0.1557,
+    "accuracyWithin1Min": 95.27,
+    "accuracyWithin3Min": 100,
+    "accuracyWithin5Min": 100,
+    "trainingTimeMs": 5579,
+    "inferenceTimeUs": 14.5,
+    "hyperparameters": {
+      "numTrees": 24,
+      "maxDepth": 8,
+      "maxFeaturesRatio": 0.65
+    }
+  },
+  "featureImportances": [
+    {
+      "featureName": "dwell_time_estimate_min",
+      "importanceScore": 0.4637
+    },
+    {
+      "featureName": "distance_to_stop_km",
+      "importanceScore": 0.4014
+    },
+    {
+      "featureName": "traffic_level_encoded",
+      "importanceScore": 0.0415
+    },
+    {
+      "featureName": "traffic_multiplier",
+      "importanceScore": 0.0307
+    },
+    {
+      "featureName": "stops_remaining_count",
+      "importanceScore": 0.0277
+    },
+    {
+      "featureName": "passenger_load_ratio",
+      "importanceScore": 0.0107
+    },
+    {
+      "featureName": "is_peak_hour",
+      "importanceScore": 0.0054
+    },
+    {
+      "featureName": "current_speed_kmh",
+      "importanceScore": 0.0039
+    },
+    {
+      "featureName": "trip_progress_ratio",
+      "importanceScore": 0.003
+    },
+    {
+      "featureName": "speed_to_limit_ratio",
+      "importanceScore": 0.0026
+    },
+    {
+      "featureName": "trip_elapsed_minutes",
+      "importanceScore": 0.0019
+    },
+    {
+      "featureName": "passenger_count",
+      "importanceScore": 0.0017
+    },
+    {
+      "featureName": "route_category_encoded",
+      "importanceScore": 0.0013
+    },
+    {
+      "featureName": "weather_encoded",
+      "importanceScore": 0.0012
+    },
+    {
+      "featureName": "weather_multiplier",
+      "importanceScore": 0.0011
+    },
+    {
+      "featureName": "time_of_day_normalized",
+      "importanceScore": 0.001
+    },
+    {
+      "featureName": "minute_of_hour",
+      "importanceScore": 0.0007
+    },
+    {
+      "featureName": "hour_of_day",
+      "importanceScore": 0.0002
+    },
+    {
+      "featureName": "day_of_week",
+      "importanceScore": 0.0002
+    },
+    {
+      "featureName": "is_weekend",
+      "importanceScore": 0
+    }
+  ]
+}

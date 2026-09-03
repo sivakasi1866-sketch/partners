@@ -1,0 +1,888 @@
+{
+  "users": [
+    {
+      "id": "admin-1",
+      "role": "admin",
+      "name": "Admin",
+      "email": "admin@example.com",
+      "passwordHash": "$2b$12$TiV.i/lWbb5Wb9Hu7kmEb.1pTaRcGd2Sgz7EUlQN9ZclEkzUmjFj.",
+      "status": "active"
+    },
+    {
+      "id": "driver-1",
+      "role": "driver",
+      "name": "Driver 1",
+      "email": "driver1@example.com",
+      "passwordHash": "$2b$12$TiV.i/lWbb5Wb9Hu7kmEb.1pTaRcGd2Sgz7EUlQN9ZclEkzUmjFj.",
+      "status": "active"
+    },
+    {
+      "id": "student-1",
+      "role": "staff",
+      "name": "Student 1",
+      "email": "student1@example.com",
+      "passwordHash": "$2b$12$TiV.i/lWbb5Wb9Hu7kmEb.1pTaRcGd2Sgz7EUlQN9ZclEkzUmjFj.",
+      "status": "active"
+    },
+    {
+      "id": "staff-1",
+      "role": "staff",
+      "name": "Staff 1",
+      "email": "staff1@example.com",
+      "passwordHash": "$2b$12$TiV.i/lWbb5Wb9Hu7kmEb.1pTaRcGd2Sgz7EUlQN9ZclEkzUmjFj.",
+      "status": "active"
+    }
+  ],
+  "drivers": [
+    {
+      "id": "driver-1",
+      "name": "Driver 1",
+      "email": "driver1@example.com",
+      "assignedBusId": "bus-1",
+      "assignedRouteId": "route-1"
+    }
+  ],
+  "buses": [
+    {
+      "id": "bus-1",
+      "busNumber": "100"
+    }
+  ],
+  "routes": [
+    {
+      "id": "route-1",
+      "name": "Main Route",
+      "stops": [
+        {
+          "id": "stop-1788411278619-0",
+          "name": "Stop 1",
+          "latitude": 10.5,
+          "longitude": 20.5
+        }
+      ]
+    }
+  ],
+  "systemLogs": [
+    {
+      "id": "log-1788411278620",
+      "level": "INFO",
+      "message": "Bulk import completed for stops. Imported 1 rows.",
+      "timestamp": "2026-09-03T04:54:38.620903Z",
+      "actorRole": "admin",
+      "actorId": "admin-1"
+    }
+  ],
+  "notifications": [
+    {
+      "id": "notif-850d2af6",
+      "title": "Trip Started: Bus 101",
+      "message": "Bus 101 has started a trip on route Unknown.",
+      "type": "info",
+      "timestamp": "2026-09-03T04:54:26.126383Z",
+      "routeId": "route-1",
+      "busId": "bus-1",
+      "targetRole": "all",
+      "isRead": false
+    },
+    {
+      "id": "notif-81ab2946",
+      "title": "Trip Started: Bus 101",
+      "message": "Bus 101 has started a trip on route Unknown.",
+      "type": "info",
+      "timestamp": "2026-09-03T04:54:23.689722Z",
+      "routeId": "route-1",
+      "busId": "bus-1",
+      "targetRole": "all",
+      "isRead": false
+    },
+    {
+      "id": "notif-72514f21",
+      "title": "Trip Completed",
+      "message": "Bus 101 has completed its trip on route Unknown.",
+      "type": "info",
+      "timestamp": "2026-09-03T04:54:22.767384Z",
+      "routeId": "route-1",
+      "busId": "bus-1",
+      "targetRole": "all",
+      "isRead": false
+    },
+    {
+      "id": "notif-ec939b94",
+      "title": "Trip Started: Bus 101",
+      "message": "Bus 101 has started a trip on route Unknown.",
+      "type": "info",
+      "timestamp": "2026-09-03T04:54:22.762633Z",
+      "routeId": "route-1",
+      "busId": "bus-1",
+      "targetRole": "all",
+      "isRead": false
+    },
+    {
+      "id": "notif-530997f0",
+      "title": "Trip Completed",
+      "message": "Bus 101 has completed its trip on route Unknown.",
+      "type": "info",
+      "timestamp": "2026-09-03T04:54:20.947130Z",
+      "routeId": "route-1",
+      "busId": "bus-1",
+      "targetRole": "all",
+      "isRead": false
+    },
+    {
+      "id": "notif-a70d183a",
+      "title": "Trip Started: Bus 101",
+      "message": "Bus 101 has started a trip on route Unknown.",
+      "type": "info",
+      "timestamp": "2026-09-03T04:54:20.941487Z",
+      "routeId": "route-1",
+      "busId": "bus-1",
+      "targetRole": "all",
+      "isRead": false
+    },
+    {
+      "id": "notif-ee650e26",
+      "title": "Trip Started: Bus 101",
+      "message": "Bus 101 has started a trip on route Unknown.",
+      "type": "info",
+      "timestamp": "2026-09-03T04:54:20.332516Z",
+      "routeId": "route-1",
+      "busId": "bus-1",
+      "targetRole": "all",
+      "isRead": false
+    },
+    {
+      "id": "notif-6296356d",
+      "title": "Trip Started: Bus 100",
+      "message": "Bus 100 has started a trip on route Unknown.",
+      "type": "info",
+      "timestamp": "2026-09-03T04:54:16.064181Z",
+      "routeId": "route-1",
+      "busId": "bus-1",
+      "targetRole": "all",
+      "isRead": false
+    },
+    {
+      "id": "notif-07fac760",
+      "title": "Trip Completed",
+      "message": "Bus 100 has completed its trip on route Unknown.",
+      "type": "info",
+      "timestamp": "2026-09-03T04:54:08.071057Z",
+      "routeId": "route-1",
+      "busId": "bus-1",
+      "targetRole": "all",
+      "isRead": false
+    },
+    {
+      "id": "notif-79b691be",
+      "title": "Trip Started: Bus 100",
+      "message": "Bus 100 has started a trip on route Unknown.",
+      "type": "info",
+      "timestamp": "2026-09-03T04:54:08.064084Z",
+      "routeId": "route-1",
+      "busId": "bus-1",
+      "targetRole": "all",
+      "isRead": false
+    },
+    {
+      "id": "notif-9534eba0",
+      "title": "Trip Started: Bus 100",
+      "message": "Bus 100 has started a trip on route Unknown.",
+      "type": "info",
+      "timestamp": "2026-09-03T04:54:07.743583Z",
+      "routeId": "route-1",
+      "busId": "bus-1",
+      "targetRole": "all",
+      "isRead": false
+    },
+    {
+      "id": "notif-c63c2f5e",
+      "title": "Trip Started: Bus 100",
+      "message": "Bus 100 has started a trip on route Unknown.",
+      "type": "info",
+      "timestamp": "2026-09-03T04:54:07.424501Z",
+      "routeId": "route-1",
+      "busId": "bus-1",
+      "targetRole": "all",
+      "isRead": false
+    },
+    {
+      "id": "notif-7682c253",
+      "title": "Trip Started: Bus 100",
+      "message": "Bus 100 has started a trip on route Unknown.",
+      "type": "info",
+      "timestamp": "2026-09-03T04:54:07.110816Z",
+      "routeId": "route-1",
+      "busId": "bus-1",
+      "targetRole": "all",
+      "isRead": false
+    },
+    {
+      "id": "notif-00c27e92",
+      "title": "Trip Started: Bus 100",
+      "message": "Bus 100 has started a trip on route Unknown.",
+      "type": "info",
+      "timestamp": "2026-09-03T04:54:06.177796Z",
+      "routeId": "route-1",
+      "busId": "bus-1",
+      "targetRole": "all",
+      "isRead": false
+    },
+    {
+      "id": "notif-96cf6f34",
+      "title": "Trip Started: Bus 100",
+      "message": "Bus 100 has started a trip on route Unknown.",
+      "type": "info",
+      "timestamp": "2026-09-03T04:54:05.867137Z",
+      "routeId": "route-1",
+      "busId": "bus-1",
+      "targetRole": "all",
+      "isRead": false
+    },
+    {
+      "id": "notif-5fc2d0d2",
+      "title": "Trip Completed",
+      "message": "Bus 100 has completed its trip on route Unknown.",
+      "type": "info",
+      "timestamp": "2026-09-03T04:54:02.342911Z",
+      "routeId": "route-1",
+      "busId": "bus-1",
+      "targetRole": "all",
+      "isRead": false
+    },
+    {
+      "id": "notif-8b548d9d",
+      "title": "Trip Started: Bus 101",
+      "message": "Bus 101 has started a trip on route Unknown.",
+      "type": "info",
+      "timestamp": "2026-09-02T14:39:56.898468Z",
+      "routeId": "route-1",
+      "busId": "bus-1",
+      "targetRole": "all",
+      "isRead": false
+    },
+    {
+      "id": "notif-ff3d74ed",
+      "title": "Trip Started: Bus 101",
+      "message": "Bus 101 has started a trip on route Unknown.",
+      "type": "info",
+      "timestamp": "2026-09-02T14:39:54.531709Z",
+      "routeId": "route-1",
+      "busId": "bus-1",
+      "targetRole": "all",
+      "isRead": false
+    },
+    {
+      "id": "notif-22f6c8eb",
+      "title": "Trip Completed",
+      "message": "Bus 101 has completed its trip on route Unknown.",
+      "type": "info",
+      "timestamp": "2026-09-02T14:39:53.910615Z",
+      "routeId": "route-1",
+      "busId": "bus-1",
+      "targetRole": "all",
+      "isRead": false
+    },
+    {
+      "id": "notif-9b3ab3af",
+      "title": "Trip Started: Bus 101",
+      "message": "Bus 101 has started a trip on route Unknown.",
+      "type": "info",
+      "timestamp": "2026-09-02T14:39:53.894678Z",
+      "routeId": "route-1",
+      "busId": "bus-1",
+      "targetRole": "all",
+      "isRead": false
+    },
+    {
+      "id": "notif-d2f38807",
+      "title": "Trip Completed",
+      "message": "Bus 101 has completed its trip on route Unknown.",
+      "type": "info",
+      "timestamp": "2026-09-02T14:39:52.376081Z",
+      "routeId": "route-1",
+      "busId": "bus-1",
+      "targetRole": "all",
+      "isRead": false
+    },
+    {
+      "id": "notif-458e66c7",
+      "title": "Trip Started: Bus 101",
+      "message": "Bus 101 has started a trip on route Unknown.",
+      "type": "info",
+      "timestamp": "2026-09-02T14:39:52.367193Z",
+      "routeId": "route-1",
+      "busId": "bus-1",
+      "targetRole": "all",
+      "isRead": false
+    },
+    {
+      "id": "notif-d8aeba63",
+      "title": "Trip Started: Bus 101",
+      "message": "Bus 101 has started a trip on route Unknown.",
+      "type": "info",
+      "timestamp": "2026-09-02T14:39:51.741291Z",
+      "routeId": "route-1",
+      "busId": "bus-1",
+      "targetRole": "all",
+      "isRead": false
+    },
+    {
+      "id": "notif-2f720fc3",
+      "title": "Trip Started: Bus 100",
+      "message": "Bus 100 has started a trip on route Unknown.",
+      "type": "info",
+      "timestamp": "2026-09-02T14:39:47.955925Z",
+      "routeId": "route-1",
+      "busId": "bus-1",
+      "targetRole": "all",
+      "isRead": false
+    },
+    {
+      "id": "notif-f3319951",
+      "title": "Trip Completed",
+      "message": "Bus 100 has completed its trip on route Unknown.",
+      "type": "info",
+      "timestamp": "2026-09-02T14:39:39.737181Z",
+      "routeId": "route-1",
+      "busId": "bus-1",
+      "targetRole": "all",
+      "isRead": false
+    },
+    {
+      "id": "notif-d7dd5c2a",
+      "title": "Trip Started: Bus 100",
+      "message": "Bus 100 has started a trip on route Unknown.",
+      "type": "info",
+      "timestamp": "2026-09-02T14:39:39.729139Z",
+      "routeId": "route-1",
+      "busId": "bus-1",
+      "targetRole": "all",
+      "isRead": false
+    },
+    {
+      "id": "notif-40ddaeb4",
+      "title": "Trip Started: Bus 100",
+      "message": "Bus 100 has started a trip on route Unknown.",
+      "type": "info",
+      "timestamp": "2026-09-02T14:39:39.398079Z",
+      "routeId": "route-1",
+      "busId": "bus-1",
+      "targetRole": "all",
+      "isRead": false
+    },
+    {
+      "id": "notif-3cda8438",
+      "title": "Trip Started: Bus 100",
+      "message": "Bus 100 has started a trip on route Unknown.",
+      "type": "info",
+      "timestamp": "2026-09-02T14:39:39.038628Z",
+      "routeId": "route-1",
+      "busId": "bus-1",
+      "targetRole": "all",
+      "isRead": false
+    },
+    {
+      "id": "notif-b294471a",
+      "title": "Trip Started: Bus 100",
+      "message": "Bus 100 has started a trip on route Unknown.",
+      "type": "info",
+      "timestamp": "2026-09-02T14:39:38.714525Z",
+      "routeId": "route-1",
+      "busId": "bus-1",
+      "targetRole": "all",
+      "isRead": false
+    },
+    {
+      "id": "notif-4fbe62f1",
+      "title": "Trip Started: Bus 100",
+      "message": "Bus 100 has started a trip on route Unknown.",
+      "type": "info",
+      "timestamp": "2026-09-02T14:39:37.772357Z",
+      "routeId": "route-1",
+      "busId": "bus-1",
+      "targetRole": "all",
+      "isRead": false
+    },
+    {
+      "id": "notif-1ed03ec6",
+      "title": "Trip Started: Bus 100",
+      "message": "Bus 100 has started a trip on route Unknown.",
+      "type": "info",
+      "timestamp": "2026-09-02T14:39:37.473792Z",
+      "routeId": "route-1",
+      "busId": "bus-1",
+      "targetRole": "all",
+      "isRead": false
+    },
+    {
+      "id": "notif-3acc667b",
+      "title": "Trip Completed",
+      "message": "Bus 100 has completed its trip on route Unknown.",
+      "type": "info",
+      "timestamp": "2026-09-02T14:39:33.940463Z",
+      "routeId": "route-1",
+      "busId": "bus-1",
+      "targetRole": "all",
+      "isRead": false
+    },
+    {
+      "id": "notif-e5b1e745",
+      "title": "Trip Started: Bus 101",
+      "message": "Bus 101 has started a trip on route Unknown.",
+      "type": "info",
+      "timestamp": "2026-09-02T14:38:57.905780Z",
+      "routeId": "route-1",
+      "busId": "bus-1",
+      "targetRole": "all",
+      "isRead": false
+    },
+    {
+      "id": "notif-f6525ee8",
+      "title": "Trip Started: Bus 101",
+      "message": "Bus 101 has started a trip on route Unknown.",
+      "type": "info",
+      "timestamp": "2026-09-02T14:38:55.431082Z",
+      "routeId": "route-1",
+      "busId": "bus-1",
+      "targetRole": "all",
+      "isRead": false
+    },
+    {
+      "id": "notif-924a27de",
+      "title": "Trip Completed",
+      "message": "Bus 101 has completed its trip on route Unknown.",
+      "type": "info",
+      "timestamp": "2026-09-02T14:38:54.847032Z",
+      "routeId": "route-1",
+      "busId": "bus-1",
+      "targetRole": "all",
+      "isRead": false
+    },
+    {
+      "id": "notif-cb9e3318",
+      "title": "Trip Started: Bus 101",
+      "message": "Bus 101 has started a trip on route Unknown.",
+      "type": "info",
+      "timestamp": "2026-09-02T14:38:54.839493Z",
+      "routeId": "route-1",
+      "busId": "bus-1",
+      "targetRole": "all",
+      "isRead": false
+    },
+    {
+      "id": "notif-1a4dd265",
+      "title": "Trip Completed",
+      "message": "Bus 101 has completed its trip on route Unknown.",
+      "type": "info",
+      "timestamp": "2026-09-02T14:38:53.385076Z",
+      "routeId": "route-1",
+      "busId": "bus-1",
+      "targetRole": "all",
+      "isRead": false
+    },
+    {
+      "id": "notif-5fa2e60f",
+      "title": "Trip Started: Bus 101",
+      "message": "Bus 101 has started a trip on route Unknown.",
+      "type": "info",
+      "timestamp": "2026-09-02T14:38:53.377419Z",
+      "routeId": "route-1",
+      "busId": "bus-1",
+      "targetRole": "all",
+      "isRead": false
+    },
+    {
+      "id": "notif-3c471d30",
+      "title": "Trip Started: Bus 101",
+      "message": "Bus 101 has started a trip on route Unknown.",
+      "type": "info",
+      "timestamp": "2026-09-02T14:38:52.797401Z",
+      "routeId": "route-1",
+      "busId": "bus-1",
+      "targetRole": "all",
+      "isRead": false
+    },
+    {
+      "id": "notif-6aa07db4",
+      "title": "Trip Started: Bus 101",
+      "message": "Bus 101 has started a trip on route Unknown.",
+      "type": "info",
+      "timestamp": "2026-09-02T14:38:32.268154Z",
+      "routeId": "route-1",
+      "busId": "bus-1",
+      "targetRole": "all",
+      "isRead": false
+    },
+    {
+      "id": "notif-e2a3ca85",
+      "title": "Trip Started: Bus 101",
+      "message": "Bus 101 has started a trip on route Unknown.",
+      "type": "info",
+      "timestamp": "2026-09-02T14:38:29.840009Z",
+      "routeId": "route-1",
+      "busId": "bus-1",
+      "targetRole": "all",
+      "isRead": false
+    },
+    {
+      "id": "notif-f3e9e112",
+      "title": "Trip Completed",
+      "message": "Bus 101 has completed its trip on route Unknown.",
+      "type": "info",
+      "timestamp": "2026-09-02T14:38:29.244745Z",
+      "routeId": "route-1",
+      "busId": "bus-1",
+      "targetRole": "all",
+      "isRead": false
+    },
+    {
+      "id": "notif-be4bb5b6",
+      "title": "Trip Started: Bus 101",
+      "message": "Bus 101 has started a trip on route Unknown.",
+      "type": "info",
+      "timestamp": "2026-09-02T14:38:29.238490Z",
+      "routeId": "route-1",
+      "busId": "bus-1",
+      "targetRole": "all",
+      "isRead": false
+    },
+    {
+      "id": "notif-1e72aae5",
+      "title": "Trip Completed",
+      "message": "Bus 101 has completed its trip on route Unknown.",
+      "type": "info",
+      "timestamp": "2026-09-02T14:38:27.684601Z",
+      "routeId": "route-1",
+      "busId": "bus-1",
+      "targetRole": "all",
+      "isRead": false
+    },
+    {
+      "id": "notif-d8d77dc4",
+      "title": "Trip Started: Bus 101",
+      "message": "Bus 101 has started a trip on route Unknown.",
+      "type": "info",
+      "timestamp": "2026-09-02T14:38:27.679295Z",
+      "routeId": "route-1",
+      "busId": "bus-1",
+      "targetRole": "all",
+      "isRead": false
+    },
+    {
+      "id": "notif-f3648cf0",
+      "title": "Trip Started: Bus 101",
+      "message": "Bus 101 has started a trip on route Unknown.",
+      "type": "info",
+      "timestamp": "2026-09-02T14:38:27.033443Z",
+      "routeId": "route-1",
+      "busId": "bus-1",
+      "targetRole": "all",
+      "isRead": false
+    },
+    {
+      "id": "notif-cf02ccae",
+      "title": "Trip Started: Bus 100",
+      "message": "Bus 100 has started a trip on route Unknown.",
+      "type": "info",
+      "timestamp": "2026-09-02T14:38:23.342636Z",
+      "routeId": "route-1",
+      "busId": "bus-1",
+      "targetRole": "all",
+      "isRead": false
+    },
+    {
+      "id": "notif-2431dc47",
+      "title": "Trip Completed",
+      "message": "Bus 100 has completed its trip on route Unknown.",
+      "type": "info",
+      "timestamp": "2026-09-02T14:38:15.253417Z",
+      "routeId": "route-1",
+      "busId": "bus-1",
+      "targetRole": "all",
+      "isRead": false
+    },
+    {
+      "id": "notif-0b7596a7",
+      "title": "Trip Started: Bus 100",
+      "message": "Bus 100 has started a trip on route Unknown.",
+      "type": "info",
+      "timestamp": "2026-09-02T14:38:15.248547Z",
+      "routeId": "route-1",
+      "busId": "bus-1",
+      "targetRole": "all",
+      "isRead": false
+    },
+    {
+      "id": "notif-c9b7729b",
+      "title": "Trip Started: Bus 100",
+      "message": "Bus 100 has started a trip on route Unknown.",
+      "type": "info",
+      "timestamp": "2026-09-02T14:38:14.904111Z",
+      "routeId": "route-1",
+      "busId": "bus-1",
+      "targetRole": "all",
+      "isRead": false
+    },
+    {
+      "id": "notif-06a3f059",
+      "title": "Trip Started: Bus 100",
+      "message": "Bus 100 has started a trip on route Unknown.",
+      "type": "info",
+      "timestamp": "2026-09-02T14:38:14.558979Z",
+      "routeId": "route-1",
+      "busId": "bus-1",
+      "targetRole": "all",
+      "isRead": false
+    },
+    {
+      "id": "notif-0fa773f2",
+      "title": "Trip Started: Bus 100",
+      "message": "Bus 100 has started a trip on route Unknown.",
+      "type": "info",
+      "timestamp": "2026-09-02T14:38:14.222711Z",
+      "routeId": "route-1",
+      "busId": "bus-1",
+      "targetRole": "all",
+      "isRead": false
+    },
+    {
+      "id": "notif-29146b5a",
+      "title": "Trip Started: Bus 100",
+      "message": "Bus 100 has started a trip on route Unknown.",
+      "type": "info",
+      "timestamp": "2026-09-02T14:38:13.531772Z",
+      "routeId": "route-1",
+      "busId": "bus-1",
+      "targetRole": "all",
+      "isRead": false
+    },
+    {
+      "id": "notif-8edaa07d",
+      "title": "Trip Started: Bus 100",
+      "message": "Bus 100 has started a trip on route Unknown.",
+      "type": "info",
+      "timestamp": "2026-09-02T14:38:13.225018Z",
+      "routeId": "route-1",
+      "busId": "bus-1",
+      "targetRole": "all",
+      "isRead": false
+    },
+    {
+      "id": "notif-55e056e4",
+      "title": "Trip Completed",
+      "message": "Bus 100 has completed its trip on route Unknown.",
+      "type": "info",
+      "timestamp": "2026-09-02T14:38:09.702893Z",
+      "routeId": "route-1",
+      "busId": "bus-1",
+      "targetRole": "all",
+      "isRead": false
+    },
+    {
+      "id": "notif-17832654",
+      "title": "Trip Started: Bus 101",
+      "message": "Bus 101 has started a trip on route Unknown.",
+      "type": "info",
+      "timestamp": "2026-09-02T14:36:25.126603Z",
+      "routeId": "route-1",
+      "busId": "bus-1",
+      "targetRole": "all",
+      "isRead": false
+    },
+    {
+      "id": "notif-0cc49606",
+      "title": "Trip Started: Bus 101",
+      "message": "Bus 101 has started a trip on route Unknown.",
+      "type": "info",
+      "timestamp": "2026-09-02T14:36:20.541421Z",
+      "routeId": "route-1",
+      "busId": "bus-1",
+      "targetRole": "all",
+      "isRead": false
+    },
+    {
+      "id": "notif-501733e8",
+      "title": "Trip Completed",
+      "message": "Bus 101 has completed its trip on route Unknown.",
+      "type": "info",
+      "timestamp": "2026-09-02T14:36:19.425320Z",
+      "routeId": "route-1",
+      "busId": "bus-1",
+      "targetRole": "all",
+      "isRead": false
+    },
+    {
+      "id": "notif-ecf5d544",
+      "title": "Trip Started: Bus 101",
+      "message": "Bus 101 has started a trip on route Unknown.",
+      "type": "info",
+      "timestamp": "2026-09-02T14:36:19.411723Z",
+      "routeId": "route-1",
+      "busId": "bus-1",
+      "targetRole": "all",
+      "isRead": false
+    },
+    {
+      "id": "notif-def3fffb",
+      "title": "Trip Completed",
+      "message": "Bus 101 has completed its trip on route Unknown.",
+      "type": "info",
+      "timestamp": "2026-09-02T14:36:16.959703Z",
+      "routeId": "route-1",
+      "busId": "bus-1",
+      "targetRole": "all",
+      "isRead": false
+    },
+    {
+      "id": "notif-a206690c",
+      "title": "Trip Started: Bus 101",
+      "message": "Bus 101 has started a trip on route Unknown.",
+      "type": "info",
+      "timestamp": "2026-09-02T14:36:16.952857Z",
+      "routeId": "route-1",
+      "busId": "bus-1",
+      "targetRole": "all",
+      "isRead": false
+    },
+    {
+      "id": "notif-09a026ef",
+      "title": "Trip Started: Bus 101",
+      "message": "Bus 101 has started a trip on route Unknown.",
+      "type": "info",
+      "timestamp": "2026-09-02T14:36:16.070260Z",
+      "routeId": "route-1",
+      "busId": "bus-1",
+      "targetRole": "all",
+      "isRead": false
+    },
+    {
+      "id": "notif-14a25a78",
+      "title": "Trip Started: Bus 100",
+      "message": "Bus 100 has started a trip on route Unknown.",
+      "type": "info",
+      "timestamp": "2026-09-02T14:36:10.762910Z",
+      "routeId": "route-1",
+      "busId": "bus-1",
+      "targetRole": "all",
+      "isRead": false
+    },
+    {
+      "id": "notif-286fab9d",
+      "title": "Trip Completed",
+      "message": "Bus 101 has completed its trip on route Unknown.",
+      "type": "info",
+      "timestamp": "2026-09-02T14:36:02.871274Z",
+      "routeId": "route-1",
+      "busId": "bus-1",
+      "targetRole": "all",
+      "isRead": false
+    },
+    {
+      "id": "notif-5619bcae",
+      "title": "Trip Started: Bus 101",
+      "message": "Bus 101 has started a trip on route Unknown.",
+      "type": "info",
+      "timestamp": "2026-09-02T14:36:02.865492Z",
+      "routeId": "route-1",
+      "busId": "bus-1",
+      "targetRole": "all",
+      "isRead": false
+    },
+    {
+      "id": "notif-0c09e46c",
+      "title": "Trip Started: Bus 101",
+      "message": "Bus 101 has started a trip on route Unknown.",
+      "type": "info",
+      "timestamp": "2026-09-02T14:36:02.553134Z",
+      "routeId": "route-1",
+      "busId": "bus-1",
+      "targetRole": "all",
+      "isRead": false
+    },
+    {
+      "id": "notif-1e7e279a",
+      "title": "Trip Started: Bus 101",
+      "message": "Bus 101 has started a trip on route Unknown.",
+      "type": "info",
+      "timestamp": "2026-09-02T14:36:02.023917Z",
+      "routeId": "route-1",
+      "busId": "bus-1",
+      "targetRole": "all",
+      "isRead": false
+    },
+    {
+      "id": "notif-5d1aef1f",
+      "title": "Trip Started: Bus 101",
+      "message": "Bus 101 has started a trip on route Unknown.",
+      "type": "info",
+      "timestamp": "2026-09-02T14:36:01.511007Z",
+      "routeId": "route-1",
+      "busId": "bus-1",
+      "targetRole": "all",
+      "isRead": false
+    },
+    {
+      "id": "notif-73c04f1c",
+      "title": "Trip Started: Bus 101",
+      "message": "Bus 101 has started a trip on route Unknown.",
+      "type": "info",
+      "timestamp": "2026-09-02T14:36:00.232387Z",
+      "routeId": "route-1",
+      "busId": "bus-1",
+      "targetRole": "all",
+      "isRead": false
+    },
+    {
+      "id": "notif-38872741",
+      "title": "Trip Started: Bus 101",
+      "message": "Bus 101 has started a trip on route Unknown.",
+      "type": "info",
+      "timestamp": "2026-09-02T14:35:59.747286Z",
+      "routeId": "route-1",
+      "busId": "bus-1",
+      "targetRole": "all",
+      "isRead": false
+    },
+    {
+      "id": "notif-f224e232",
+      "title": "Trip Completed",
+      "message": "Bus 100 has completed its trip on route Unknown.",
+      "type": "info",
+      "timestamp": "2026-09-02T14:35:55.252560Z",
+      "routeId": "route-1",
+      "busId": "bus-1",
+      "targetRole": "all",
+      "isRead": false
+    },
+    {
+      "id": "notif-1",
+      "title": "Bus 01 Approaching Library",
+      "message": "Bus 01 is 2 minutes away from University Central Library.",
+      "type": "info",
+      "timestamp": "2026-08-31T09:02:00.458Z",
+      "routeId": "route-1",
+      "busId": "bus-101",
+      "targetRole": "all",
+      "isRead": false
+    },
+    {
+      "id": "notif-2",
+      "title": "Gate 2 Roadwork Advisory",
+      "message": "Minor congestion near Gate 2 roundabout. Metro Express R-02 running with estimated 2-min delay buffer.",
+      "type": "warning",
+      "timestamp": "2026-08-31T08:39:00.458Z",
+      "routeId": "route-2",
+      "targetRole": "all",
+      "isRead": true
+    },
+    {
+      "id": "notif-3",
+      "title": "Privacy Protocol Check: 100% Compliant",
+      "message": "System audit verified: Zero student or staff location data collected. GPS tracking strictly bound to active driver bus sessions.",
+      "type": "success",
+      "timestamp": "2026-08-31T08:04:00.458Z",
+      "targetRole": "admin",
+      "isRead": true
+    }
+  ]
+}

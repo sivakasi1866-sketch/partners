@@ -1,0 +1,93 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.12, pytest-9.1.1, pluggy-1.6.0
+rootdir: /app/applet
+plugins: anyio-4.14.2, asyncio-1.4.0
+asyncio: mode=strict, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
+collected 73 items
+
+backend/app/tests/test_agent10_gps.py .......                            [  9%]
+backend/app/tests/test_agent12_eta.py ..                                 [ 12%]
+backend/app/tests/test_agent8_regression.py .........                    [ 24%]
+backend/app/tests/test_agent9_assignments.py ...............             [ 45%]
+backend/app/tests/test_api.py .F...........                              [ 63%]
+backend/app/tests/test_buses_routes.py .........                         [ 75%]
+backend/app/tests/test_import.py .....F...                               [ 87%]
+backend/app/tests/test_users.py F..F.....                                [100%]
+
+=================================== FAILURES ===================================
+______________________________ test_2_auth_login _______________________________
+
+    def test_2_auth_login():
+        response = client.post("/api/auth/login", json={"email": "student1@example.com", "password": "password123"})
+>       assert response.status_code == 200
+E       assert 422 == 200
+E        +  where 422 = <Response [422 Unprocessable Entity]>.status_code
+
+backend/app/tests/test_api.py:43: AssertionError
+______________________________ test_commit_import ______________________________
+
+    def test_commit_import():
+        headers = get_headers("admin@example.com")
+        data = {
+            "entity_type": "students",
+            "rows": [
+                {"data": {"name": "Alice", "identifier": "alice2@test.com", "department": "CS"}}
+            ]
+        }
+        response = client.post("/api/import/commit", json=data, headers=headers)
+        assert response.status_code == 200
+        res_data = response.json()
+        assert res_data["imported_rows"] == 1
+    
+        # check db
+        db = get_db()
+>       assert any(u["email"] == "alice2@test.com" for u in db.users)
+E       assert False
+E        +  where False = any(<generator object test_commit_import.<locals>.<genexpr> at 0x7fa281265e00>)
+
+backend/app/tests/test_import.py:108: AssertionError
+___________________________ test_1_create_user_admin ___________________________
+
+    def test_1_create_user_admin():
+        headers = get_headers("admin@example.com")
+        response = client.post("/api/users", json={
+            "name": "New Student",
+            "identifier": "new.student@example.com",
+            "role": "student",
+            "password": "password123"
+        }, headers=headers)
+>       assert response.status_code == 200
+E       assert 422 == 200
+E        +  where 422 = <Response [422 Unprocessable Entity]>.status_code
+
+backend/app/tests/test_users.py:38: AssertionError
+____________________________ test_4_deactivate_user ____________________________
+
+    def test_4_deactivate_user():
+        admin_headers = get_headers("admin@example.com")
+        response = client.patch("/api/users/student-1/status", json={"status": "inactive"}, headers=admin_headers)
+        assert response.status_code == 200
+    
+        # Now try to login as student-1
+        login_resp = client.post("/api/auth/login", json={"email": "student1@example.com", "password": "password123"})
+>       assert login_resp.status_code == 403
+E       assert 422 == 403
+E        +  where 422 = <Response [422 Unprocessable Entity]>.status_code
+
+backend/app/tests/test_users.py:68: AssertionError
+=============================== warnings summary ===============================
+../../usr/local/lib/python3.10/dist-packages/fastapi/testclient.py:1
+  /usr/local/lib/python3.10/dist-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+backend/app/core/config.py:4
+  /app/applet/backend/app/core/config.py:4: PydanticDeprecatedSince20: Support for class-based `config` is deprecated, use ConfigDict instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.13/migration/
+    class Settings(BaseSettings):
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED backend/app/tests/test_api.py::test_2_auth_login - assert 422 == 200
+FAILED backend/app/tests/test_import.py::test_commit_import - assert False
+FAILED backend/app/tests/test_users.py::test_1_create_user_admin - assert 422...
+FAILED backend/app/tests/test_users.py::test_4_deactivate_user - assert 422 =...
+============= 4 failed, 69 passed, 2 warnings in 61.09s (0:01:01) ==============

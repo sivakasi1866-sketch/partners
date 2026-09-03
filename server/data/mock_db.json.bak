@@ -1,0 +1,124 @@
+{
+  "users": [
+    {
+      "id": "admin-1",
+      "role": "admin",
+      "name": "Admin",
+      "email": "admin@example.com",
+      "passwordHash": "$2b$12$VPHkRl4LaP93qRbnEzrLhuS1.crHekEotSw9lBw07Uic5CW1dwjZW",
+      "status": "active"
+    },
+    {
+      "id": "driver-1",
+      "role": "driver",
+      "name": "Driver 1",
+      "email": "driver1@example.com",
+      "passwordHash": "$2b$12$VPHkRl4LaP93qRbnEzrLhuS1.crHekEotSw9lBw07Uic5CW1dwjZW",
+      "status": "active",
+      "assignedBusId": "bus-1",
+      "assignedRouteId": "route-1"
+    },
+    {
+      "id": "student-1",
+      "role": "staff",
+      "name": "Student 1",
+      "email": "student1@example.com",
+      "passwordHash": "$2b$12$VPHkRl4LaP93qRbnEzrLhuS1.crHekEotSw9lBw07Uic5CW1dwjZW",
+      "status": "active"
+    },
+    {
+      "id": "staff-1",
+      "role": "staff",
+      "name": "Staff 1",
+      "email": "staff1@example.com",
+      "passwordHash": "$2b$12$VPHkRl4LaP93qRbnEzrLhuS1.crHekEotSw9lBw07Uic5CW1dwjZW",
+      "status": "active"
+    },
+    {
+      "id": "driver-2",
+      "role": "driver",
+      "name": "Driver 2",
+      "email": "driver2@example.com",
+      "passwordHash": "$2b$12$VPHkRl4LaP93qRbnEzrLhuS1.crHekEotSw9lBw07Uic5CW1dwjZW",
+      "status": "active"
+    }
+  ],
+  "drivers": [
+    {
+      "id": "driver-1",
+      "name": "Driver 1",
+      "email": "driver1@example.com",
+      "assignedBusId": "bus-1",
+      "assignedRouteId": "route-1"
+    },
+    {
+      "id": "driver-2",
+      "role": "driver",
+      "name": "Driver 2",
+      "email": "driver2@example.com",
+      "status": "active"
+    }
+  ],
+  "buses": [
+    {
+      "id": "bus-1",
+      "busNumber": "100"
+    }
+  ],
+  "routes": [
+    {
+      "id": "route-1",
+      "name": "Main Route",
+      "stops": [
+        {
+          "id": "stop-1788243174353-0",
+          "name": "Stop 1",
+          "latitude": 10.5,
+          "longitude": 20.5
+        }
+      ]
+    }
+  ],
+  "systemLogs": [
+    {
+      "id": "log-1788243174353",
+      "level": "INFO",
+      "message": "Bulk import completed for stops. Imported 1 rows.",
+      "timestamp": "2026-09-01T06:12:54.353543Z",
+      "actorRole": "admin",
+      "actorId": "admin-1"
+    }
+  ],
+  "notifications": [
+    {
+      "id": "notif-1",
+      "title": "Bus 01 Approaching Library",
+      "message": "Bus 01 is 2 minutes away from University Central Library.",
+      "type": "info",
+      "timestamp": "2026-08-31T09:02:00.458Z",
+      "routeId": "route-1",
+      "busId": "bus-101",
+      "targetRole": "all",
+      "isRead": false
+    },
+    {
+      "id": "notif-2",
+      "title": "Gate 2 Roadwork Advisory",
+      "message": "Minor congestion near Gate 2 roundabout. Metro Express R-02 running with estimated 2-min delay buffer.",
+      "type": "warning",
+      "timestamp": "2026-08-31T08:39:00.458Z",
+      "routeId": "route-2",
+      "targetRole": "all",
+      "isRead": true
+    },
+    {
+      "id": "notif-3",
+      "title": "Privacy Protocol Check: 100% Compliant",
+      "message": "System audit verified: Zero student or staff location data collected. GPS tracking strictly bound to active driver bus sessions.",
+      "type": "success",
+      "timestamp": "2026-08-31T08:04:00.458Z",
+      "targetRole": "admin",
+      "isRead": true
+    }
+  ]
+}

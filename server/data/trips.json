@@ -1,0 +1,21 @@
+[
+  {
+    "id": "trip-1788411266126",
+    "busId": "bus-1",
+    "busNumber": "101",
+    "driverId": "driver-1",
+    "driverName": "Driver 1",
+    "routeId": "route-1",
+    "routeNumber": null,
+    "routeName": "Route 1",
+    "status": "in_progress",
+    "startTime": "2026-09-03T04:54:26.126086Z",
+    "currentLatitude": 10,
+    "currentLongitude": 10,
+    "currentStopIndex": 0,
+    "nextStopIndex": 0,
+    "passengerCount": 0,
+    "distanceCoveredKm": 0,
+    "gpsActive": true
+  }
+]

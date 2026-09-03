@@ -1,0 +1,16 @@
+[
+  {
+    "id": "tel-1788411263696",
+    "trip_id": "trip-1788411263689",
+    "bus_id": "bus-1",
+    "route_id": "route-1",
+    "driver_id": "driver-1",
+    "timestamp": "2026-08-31T00:00:00Z",
+    "latitude": 10.5,
+    "longitude": 10.5,
+    "speed_kmh": null,
+    "gps_accuracy_m": null,
+    "heading": null,
+    "trip_status": "in_progress"
+  }
+]
